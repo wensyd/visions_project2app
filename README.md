@@ -18,7 +18,7 @@ List your routes in a table
 | /visions | get | get all visions (index)|
 | /visions/:id | get | get a particular vision (show)|
 | /visions/new | get | return form to create a new vision (new)|
-| / | post | get | post request to /visions, create new and redirect to index (create)|
+| / | post | get post request to /visions, create new and redirect to index (create)|
 | /visions/:id/edit | get | edit a particular vision (edit)|
 | /visions/:id | put | put request to /visions/:id (update)|
 | /visions/:id | delete | deletes a particular vision (destroy)|

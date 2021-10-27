@@ -7,7 +7,14 @@ Vision is a vision board application. It is intended for the user to be able to 
 
 ## Models
 
-List here any models in your app and their properties
+models/Visions.js
+
+{
+    title: String,
+    image: String,
+    description: String,
+    complete: Boolean
+}
 
 ## Route Table
 
@@ -32,7 +39,7 @@ List your routes in a table
 -user can update picture.
 -user can go back to main page from show page.
 -user can create new picture/file/vision. 
-
+-user can mark the vision complete with checkbox.
 
 
 ## Challenges

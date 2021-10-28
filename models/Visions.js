@@ -18,9 +18,8 @@ const visionsSchema = new Schema (
         title: String,
         image: String,
         description: String,
-        complete: Boolean
-    }
-)
+        complete: {type: Boolean, required: false, default:false}
+    }, {timestamps: true})
 
 // make a Visions model
 

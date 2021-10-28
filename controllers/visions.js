@@ -133,21 +133,21 @@ router.get("/", (req, res) => {
     
     // show route - get - /fruits/:id
 
-    // router.get("/:id", (req, res)=> {
-    //     //get the id from params
-    //     const id = req.params.id
+    router.get("/:id", (req, res)=> {
+        //get the id from params
+        const id = req.params.id
 
-    //     // get that particular fruit from the database
-    //     Fruit.findById(id)
-    //     .then((fruit) => {
-    //         // render the show template with the fruit
-    //         res.render("fruits/show.liquid", {fruit})
-    //     })
-    //     // error handling
-    //     .catch((error) => {
-    //         res.json({error})
-    //     })
-    // })
+        // get that particular fruit from the database
+        Visions.findById(id)
+        .then((visions) => {
+            // render the show template with the fruit
+            res.render("visions/show.liquid", {visions})
+        })
+        // error handling
+        .catch((error) => {
+            res.json({error})
+        })
+    })
  
 
 

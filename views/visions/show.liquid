@@ -1,0 +1,27 @@
+{% layout "layout.liquid" %}
+{% block content %}
+<div class="mainBtn"><a href="/visions"><button>Back to Main</button></a></div>
+<article>
+
+    <h2> {{visions.title}} 
+    </h2>
+    <div class="image"><img src="{{ visions.image }}" /></div>
+    <br/>
+    <h2 for="description">{{visions.description}}</h2>
+    <h3>{% if vision.complete == true %}
+            - Complete
+        {% else %}
+            - Not Complete
+        {% endif %}
+    </h3>
+    <div class="edit-delete-nav">
+    <a href="/visions/{{ vision._id }}/edit"><button>EDIT</button></a>
+    <form action="/visions/{{ vision._id }}?_method=DELETE" method="post">
+    <input type="submit" value="DELETE">
+    </form>
+</div>
+   
+</article>
+
+
+{% endblock %}

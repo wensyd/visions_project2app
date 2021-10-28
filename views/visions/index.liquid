@@ -1,0 +1,18 @@
+{% layout "layout.liquid" %} {% block content %}
+
+<div>
+  <a href="/visions/new"><button>Create a New Vision</button></a>
+  <a href="/user/logout"><button>Logout</button></a>
+  {% for vision in visions %}
+  <div class="container">
+    <div class="row">
+        <div class="column">
+      <img src="{{ vision.image }}" />
+      {% if vision.complete == true %} {% else %} {% endif %}
+    </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock %}

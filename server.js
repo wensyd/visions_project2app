@@ -6,7 +6,7 @@ const express = require("express") // web framework
 const morgan = require("morgan") // logger
 const methodOverride = require("method-override") // to swap request methods
 const path = require("path") // helper functions for file paths
-const FruitsRouter = require("./controllers/fruit")
+const visionsRouter = require("./controllers/visions")
 const UserRouter = require("./controllers/user")
 const session = require("express-session") // session middleware
 const MongoStore = require("connect-mongo") // save sessions in mongo
@@ -39,7 +39,8 @@ app.use(morgan("tiny")); //logging
 app.use(methodOverride("_method")); // override for put and delete requests from forms
 app.use(express.urlencoded({ extended: true })); // parse urlencoded request bodies
 app.use(express.static("public")); // serve files from public statically
-// middlware to create sessions (req.session)
+
+// middleware to create sessions (req.session)
 app.use(session({
     secret: process.env.SECRET,
     store: MongoStore.create({mongoUrl: process.env.DATABASE_URL}),
@@ -51,7 +52,7 @@ app.use(session({
 ///////////
 
 app.get("/", (req, res) => {
-    res.render("index.liquid")
+    res.send("Hello")
 })
 
 // register visions router
@@ -59,7 +60,7 @@ app.use("/visions", visionsRouter)
 
 // register user router
 
-app.use("/user", UserRouter)
+// app.use("/user", UserRouter)
 
 
 //////////////

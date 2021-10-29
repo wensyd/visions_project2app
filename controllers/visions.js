@@ -55,38 +55,38 @@ router.get("/new", (req, res) => {
     res.render("visions/new.liquid");
   });
 
-  // create - post request - /fruits
-// router.post("/", (req, res) => {
+  // create - post request - /visions
+router.post("/", (req, res) => {
 
-//     // convert the checkbox property to true or false
-//     req.body.readyToEat = req.body.readyToEat === "on" ? true : false
+    // convert the checkbox property to true or false
+    req.body.complete = req.body.complete === "on" ? true : false
 
-//      // add the username to req.body, to track user
-//      req.body.username = req.session.username
+     // add the username to req.body, to track user
+    //  req.body.username = req.session.username
      
-//     // create the new fruit
-//     Fruit.create(req.body)
-//     .then((fruit) => {
-//         // redirect the user back to the index route
-//         res.redirect("/fruits")
-//     })
-//     // error handling
-//     .catch((error) => {
-//         res.json({error})
-//     })
+    // create the new vision
+    Visions.create(req.body)
+    .then((visions) => {
+        // redirect the user back to the index route
+        res.redirect("/visions")
+    })
+    // error handling
+    .catch((error) => {
+        res.json({error})
+    })
 
-// })
+})
 
-// edit route - get request - /fruits/:id/edit
+// edit route - get request - /visions/:id/edit
 // router.get("/:id/edit", (req, res) => {
 //     // get the id from params
 //     const id = req.params.id
 
-//     // get the fruit with the matching id
-//     Fruit.findById(id)
-//     .then((fruit) => {
-//         // render the edit page template with the fruit data
-//         res.render("fruits/edit.liquid", { fruit })
+//     // get the visions with the matching id
+//     Visions.findById(id)
+//     .then((visions) => {
+//         // render the edit page template with the visions data
+//         res.render("visions/edit.liquid", { visions })
 //     })
 //     // error handling
 //     .catch((error) => {
@@ -94,7 +94,7 @@ router.get("/new", (req, res) => {
 //     })
 // })
 
-// update route - put request - "/fruits/:id"
+// update route - put request - "/visions/:id"
 // router.put("/:id", (req, res) => {
     // get the id from params
     // const id = req.params.id
@@ -103,10 +103,10 @@ router.get("/new", (req, res) => {
     // req.body.readyToEat = req.body.readyToEat === "on" ? true : false
 
     // update the item with the matching id
-//     Fruit.findByIdAndUpdate(id, req.body, {new: true})
-//     .then((fruit) => {
+//    Visions.findByIdAndUpdate(id, req.body, {new: true})
+//     .then((visions) => {
 //         // redirect user back to index
-//         res.redirect("/fruits")
+//         res.redirect("/visions")
 //     })
 //      // error handling
 //      .catch((error) => {
@@ -114,16 +114,16 @@ router.get("/new", (req, res) => {
 //     })
 // })
 
-//destroy route - delete request -/ fruits/:id
+//destroy route - delete request -/ visions/:id
 
 // router.delete("/:id", (req, res)=> {
 //     // grab the id from params
 //     const id = req.params.id
-//     // delete the fruit
-//     Fruit.findByIdAndRemove(id)
-//     .then((fruit) => {
+//     // delete the visions
+//     Visions.findByIdAndRemove(id)
+//     .then((visions) => {
 //         // redirect user back to index
-//         res.redirect("/fruits")
+//         res.redirect("/visions")
 //     })
 //      // error handling
 //      .catch((error) => {
@@ -131,16 +131,16 @@ router.get("/new", (req, res) => {
 //     })
 // })
     
-    // show route - get - /fruits/:id
+    // show route - get - /visions/:id
 
     router.get("/:id", (req, res)=> {
         //get the id from params
         const id = req.params.id
 
-        // get that particular fruit from the database
+        // get that particular visions from the database
         Visions.findById(id)
         .then((visions) => {
-            // render the show template with the fruit
+            // render the show template with the visions
             res.render("visions/show.liquid", {visions})
         })
         // error handling

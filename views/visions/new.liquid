@@ -2,16 +2,28 @@
 
 <div class="form">
 <h3>Create a new Vision</h3>
-<form action="/visions/new" method="POST">
+<form action="/visions" method="POST">
  <input type="text" name="title" placeholder="enter a title here">  
- <label for="vision">Choose an image:</label> 
-<input type="file" name="vision" accept="image/png, image/jpeg">
-<label for="description">{{visions.description}}</label>
-<input type="textarea" name="description" placeholder="description goes here"> 
+
+<!-- choose image -->
+
+ <label>Choose an image:<input type="text" name="image" placeholder="insert image URL here"></label> 
+
+ 
+<!-- description -->
+<label>
+    Description:<input type="textarea" name="description" placeholder="description goes here"> 
+</label>
+
+<!-- checkbox -->
 <label>
    Complete: <input type="checkbox" name="complete"/>
 </label>
+
+<!-- submit btn -->
 <input type="submit" value="create new Vision"/>
+
 </form>
 </div>
 {% endblock %}
+

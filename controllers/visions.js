@@ -70,6 +70,8 @@ router.post("/", (req, res) => {
         // redirect the user back to the index route
         res.redirect("/visions")
     })
+    // console.log(req.body)
+
     // error handling
     .catch((error) => {
         res.json({error})
@@ -116,20 +118,20 @@ router.post("/", (req, res) => {
 
 //destroy route - delete request -/ visions/:id
 
-// router.delete("/:id", (req, res)=> {
-//     // grab the id from params
-//     const id = req.params.id
-//     // delete the visions
-//     Visions.findByIdAndRemove(id)
-//     .then((visions) => {
-//         // redirect user back to index
-//         res.redirect("/visions")
-//     })
-//      // error handling
-//      .catch((error) => {
-//         res.json({error})
-//     })
-// })
+router.delete("/:id", (req, res)=> {
+    // grab the id from params
+    const id = req.params.id
+    // delete the visions
+    Visions.findByIdAndRemove(id)
+    .then((visions) => {
+        // redirect user back to index
+        res.redirect("/visions")
+    })
+     // error handling
+     .catch((error) => {
+        res.json({error})
+    })
+})
     
     // show route - get - /visions/:id
 

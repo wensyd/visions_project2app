@@ -3,16 +3,18 @@
 <div>
   
   
-  {% for vision in visions %}
+ 
   <div class="container">
     <div class="row">
+      {% for vision in visions %}
         <div class="column">
      <a href="/visions/{{vision._id}}"> <img src="{{ vision.image }}" /></a>
-      {% if vision.complete == true %} {% else %} {% endif %}
+      {% if vision.complete == true %} - Complete  {% else %} - Not Complete {% endif %}
     </div>
+    {% endfor %}
     </div>
   </div>
-  {% endfor %}
+ 
 </div>
 
 {% endblock %}

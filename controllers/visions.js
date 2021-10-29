@@ -51,9 +51,9 @@ router.get("/", (req, res) => {
     });
 
     // new route
-// router.get("/new", (req, res) => {
-//     res.render("fruits/new.liquid");
-//   });
+router.get("/new", (req, res) => {
+    res.render("visions/new.liquid");
+  });
 
   // create - post request - /fruits
 // router.post("/", (req, res) => {

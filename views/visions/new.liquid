@@ -1,0 +1,17 @@
+{% layout "layout.liquid" %} {% block content %}
+
+<div class="form">
+<h3>Create a new Vision</h3>
+<form action="/visions/new" method="POST">
+ <input type="text" name="title" placeholder="enter a title here">  
+ <label for="vision">Choose an image:</label> 
+<input type="file" name="vision" accept="image/png, image/jpeg">
+<label for="description">{{visions.description}}</label>
+<input type="textarea" name="description" placeholder="description goes here"> 
+<label>
+   Complete: <input type="checkbox" name="complete"/>
+</label>
+<input type="submit" value="create new Vision"/>
+</form>
+</div>
+{% endblock %}

@@ -38,7 +38,12 @@
   <body>
     <header>
       <h1>Visions</h1>
-      <a href="/user/logout"><button>Logout</button></a>
+      
+      <nav>
+        <a href="/visions/new" class="newBtn"><button>Create a New Vision</button></a>
+        <a href="/user/logout"><button>Logout</button></a>
+      </nav>
+      
     </header>
 
     <main>{% block content %}My default content{% endblock %}</main>

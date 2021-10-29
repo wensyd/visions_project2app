@@ -4,9 +4,15 @@ header {
     justify-content: space-around;
 
 }
-.newBtn{
+
+nav {
     display: flex;
-    justify-content: flex-start;
+    background-color: orchid;
+    color: white;
+    justify-content: space-around;
+    padding: 15px;
+    font-size: 2em;
+
 }
 
 header h1 {

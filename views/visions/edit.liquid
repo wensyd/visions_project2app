@@ -1,0 +1,34 @@
+{% layout "layout.liquid" %}
+{% block content %}
+
+<div>
+
+ <form action="/visions/{{ visions._id }}?_method=PUT" method="post">
+  <fieldset>
+    <legend>Edit {{ visions.title }}</legend>
+        <label>
+            Title: <input type="text" name="title" placeholder="enter title here" value="{{visions.title}}"/>
+        </label>
+        <label>
+            Image: <input type="text" name="image" placeholder="enter new image URL here" value="{{visions.image}}"/>
+        </label>
+
+        <label>
+            Description:<input type="textarea" name="description" placeholder="description goes here" value="{{visions.description}}"> 
+        </label>
+
+        <label>
+            Complete: <input type="checkbox" name="complete"
+            {% if visions.complete == true %}
+            checked
+            {% endif %}
+            >
+        </label>
+    </fieldset>
+    <input type="submit" value="update {{visions.title}}"/>
+ </form>
+
+</div>
+
+
+{% endblock %}

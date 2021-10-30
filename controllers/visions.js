@@ -16,15 +16,15 @@ const router = express.Router()
 // Router Middleware
 ////////////////////////////
 
-// router.use((req, res, next)=> {
-//     // check if logged in
-//     if (req.session.loggedIn){
-//         // send to routes
-//         next()
-//     } else {
-//         res.redirect("/user/login")
-//     }
-// });
+router.use((req, res, next)=> {
+    // check if logged in
+    if (req.session.loggedIn){
+        // send to routes
+        next()
+    } else {
+        res.redirect("/user/login")
+    }
+});
 
 
 
@@ -32,7 +32,7 @@ const router = express.Router()
 // Visions Routes
 ////////////////////////
 
-//index route  get /fruits
+//index route  get /visions
 
 router.get("/", (req, res) => {
     // find all the visions
@@ -62,7 +62,7 @@ router.post("/", (req, res) => {
     req.body.complete = req.body.complete === "on" ? true : false
 
      // add the username to req.body, to track user
-    //  req.body.username = req.session.username
+     req.body.username = req.session.username
      
     // create the new vision
     Visions.create(req.body)
@@ -80,41 +80,41 @@ router.post("/", (req, res) => {
 })
 
 // edit route - get request - /visions/:id/edit
-// router.get("/:id/edit", (req, res) => {
-//     // get the id from params
-//     const id = req.params.id
+router.get("/:id/edit", (req, res) => {
+    // get the id from params
+    const id = req.params.id
 
-//     // get the visions with the matching id
-//     Visions.findById(id)
-//     .then((visions) => {
-//         // render the edit page template with the visions data
-//         res.render("visions/edit.liquid", { visions })
-//     })
-//     // error handling
-//     .catch((error) => {
-//         res.json({error})
-//     })
-// })
+    // get the visions with the matching id
+    Visions.findById(id)
+    .then((visions) => {
+        // render the edit page template with the visions data
+        res.render("visions/edit.liquid", { visions })
+    })
+    // error handling
+    .catch((error) => {
+        res.json({error})
+    })
+})
 
 // update route - put request - "/visions/:id"
-// router.put("/:id", (req, res) => {
+router.put("/:id", (req, res) => {
     // get the id from params
-    // const id = req.params.id
+    const id = req.params.id
     
     // convert the checkbox property to true or false
-    // req.body.readyToEat = req.body.readyToEat === "on" ? true : false
+    req.body.complete = req.body.complete === "on" ? true : false
 
     // update the item with the matching id
-//    Visions.findByIdAndUpdate(id, req.body, {new: true})
-//     .then((visions) => {
-//         // redirect user back to index
-//         res.redirect("/visions")
-//     })
-//      // error handling
-//      .catch((error) => {
-//         res.json({error})
-//     })
-// })
+   Visions.findByIdAndUpdate(id, req.body, {new: true})
+    .then((visions) => {
+        // redirect user back to index
+        res.redirect("/visions")
+    })
+     // error handling
+     .catch((error) => {
+        res.json({error})
+    })
+})
 
 //destroy route - delete request -/ visions/:id
 

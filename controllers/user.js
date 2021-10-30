@@ -85,7 +85,7 @@ router.get("/logout", (req, res) => {
     // destroy the session
     req.session.destroy((err) => {
         // send user back to main page
-        res.redirect("/")
+        res.redirect("/visions")
     })
 })
 

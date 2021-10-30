@@ -52,7 +52,7 @@ app.use(session({
 ///////////
 
 app.get("/", (req, res) => {
-    res.send("Hello")
+    res.render("./index.liquid")
 })
 
 // register visions router
@@ -60,7 +60,7 @@ app.use("/visions", visionsRouter)
 
 // register user router
 
-// app.use("/user", UserRouter)
+ app.use("/user", UserRouter)
 
 
 //////////////

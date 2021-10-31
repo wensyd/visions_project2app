@@ -5,39 +5,8 @@ header {
 
 }
 
-nav {
-    display: flex;
-    background-color: orchid;
-    color: white;
-    justify-content: space-around;
-    padding: 15px;
-    font-size: 2em;
 
-}
-
-header h1 {
-
-
-    text-align: left;
-    color: navy;
-    
-
-}
-div.container{
-
-    
-    display: flex;
-    flex-wrap: wrap;
-
-}
-
-div.row {
-    width: 20%;
-   
-
-}
-
-.mainBtn{
+/* .mainBtn{
     display: flex;
     justify-content: flex-end;
 
@@ -62,4 +31,4 @@ h3{
     flex-direction: flex-end;
     justify-content: space-evenly;
 
-}
+} */

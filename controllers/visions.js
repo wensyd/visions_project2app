@@ -50,6 +50,12 @@ router.get("/", (req, res) => {
 
     });
 
+    //about route
+    router.get("/about", (req, res) => {
+        // find all the visions
+            res.render("visions/about.liquid")
+        });
+
     // new route
 router.get("/new", (req, res) => {
     res.render("visions/new.liquid");

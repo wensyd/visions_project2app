@@ -1,28 +1,37 @@
 {% layout "layout.liquid" %} {% block content %}
 
 <div class="form">
-<h3>Create a new Vision</h3>
+
 <form action="/visions" method="POST">
- <label></label>   
- <input type="text" name="title" placeholder="enter a title here">  
-
+    <h3>Create a new Vision</h3>
+    <div class="form-group">
+     
+ <label class="form-label">  
+ Title:<input type="text"  class="form-control" name="title" placeholder="enter a title here">  
+</label> 
+</div>
 <!-- choose image -->
-
- <label>Choose an image:<input type="text" name="image" placeholder="insert image URL here"></label> 
-
+<div class="form-group">
+ <label class="form-label">
+     Choose an image:<input type="text"  class="form-control" name="image" placeholder="insert image URL here"></label> 
+</div>
  
 <!-- description -->
-<label>
-    Description:<input type="textarea" name="description" placeholder="description goes here"> 
+<div class="form-group">
+<label class="form-label">
+    Description:<input type="textarea" class="form-control" name="description" id="description"   placeholder="description goes here"> 
 </label>
+</div>
 
 <!-- checkbox -->
-<label>
+<div class="checkbox">
+<label class="form-label">
    Complete: <input type="checkbox" name="complete"/>
 </label>
+</div>
 
 <!-- submit btn -->
-<input type="submit" value="create new Vision"/>
+<input type="submit" class="btn btn-outline-secondary" value="create new Vision"/>
 
 </form>
 </div>

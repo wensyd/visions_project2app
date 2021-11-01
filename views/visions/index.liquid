@@ -4,11 +4,11 @@
   
   
  
-  <div class="container">
-    <div class="row">
+  <div class="container flex-container">
+    <div class="row justify-content-center">
       {% for vision in visions %}
         <div class="column">
-     <a href="/visions/{{vision._id}}"> <img src="{{ vision.image }}" /></a>
+     <a href="/visions/{{vision._id}}"> <img src="{{ vision.image }}" class="img-thumbnail" /></a>
       {% if vision.complete == true %} - Complete  {% else %} - Not Complete {% endif %}
     </div>
     {% endfor %}

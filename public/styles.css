@@ -1,10 +1,51 @@
+.navbar {
+width: 90%;
+
+}
+div{
+    display: flex;
+
+}
+div.container{
+    display: flex;
+}
+
+.row   {
+    display: flex;
+}
+
+.column {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 10px 30px;
+
+}
+
+.img-thumbnail{
+    width: 90px;
+    height: 100px;
+}
+
+
 header {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
 
 }
+div.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   align-content: center;
+   padding: 10%;
+}
 
+#description {
+    width: ;
+}
 
 /* .mainBtn{
     display: flex;

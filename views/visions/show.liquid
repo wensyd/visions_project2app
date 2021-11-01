@@ -1,13 +1,13 @@
 {% layout "layout.liquid" %}
 {% block content %}
-<div class="mainBtn"><a href="/visions"><button>Back to Main</button></a></div>
+<div class="container-fluid">
 <article>
 
     <h2> {{visions.title}} 
     </h2>
-    <div class="image"><img src="{{ visions.image }}" /></div>
+    <div class="mx-auto d-block image img"><img src="{{ visions.image }}"  /></div>
     <br/>
-    <h2 for="description">{{visions.description}}</h2>
+    <h2 for="description" id="descriptionh2">{{visions.description}}</h2>
     <h3>{% if visions.complete == true %}
             - Complete
         {% else %}
@@ -16,14 +16,14 @@
     </h3>
     <div class="edit-delete-nav">
 
-    <a href="/visions/{{ visions._id }}/edit"><button>EDIT</button></a>
+    <a href="/visions/{{ visions._id }}/edit"><button class="btn btn-outline-secondary">EDIT</button></a>
     <form action="/visions/{{ visions._id }}?_method=DELETE" method="post">
-    <input type="submit" value="DELETE">
+    <input type="submit" class="btn btn-outline-secondary" value="DELETE">
     </form>
 
-</div>
+    </div>
    
 </article>
 
-
+</div>
 {% endblock %}

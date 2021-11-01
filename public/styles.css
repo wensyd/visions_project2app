@@ -1,3 +1,21 @@
+/* // Extra small devices (portrait phones, less than 576px)
+// No media query since this is the default in Bootstrap
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) { ... }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+ */
+
+
+
 .navbar {
 width: 90%;
 
@@ -12,15 +30,11 @@ div.container{
 
 .row   {
     display: flex;
-}
-
-.column {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    gap: 10px 30px;
+    flex-wrap: wrap;
+    padding:10%;
 
 }
+
 
 .img-thumbnail{
     width: 90px;
@@ -41,23 +55,33 @@ div.form {
     align-items: center;
    align-content: center;
    padding: 10%;
+ 
+}
+
+form{
+    align-items: center;
+
+}
+
+.btn{
+    align-self: center;
 }
 
 #description {
-    width: ;
+    height: 70px;
 }
 
-/* .mainBtn{
-    display: flex;
-    justify-content: flex-end;
 
-}
-
-article h2 {
+h2 {
     text-align: center;
 }
 
-div.image {
+article {
+    text-align: center;
+    width: 100%;
+}
+
+.img {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -72,4 +96,45 @@ h3{
     flex-direction: flex-end;
     justify-content: space-evenly;
 
-} */
+} 
+#aboutContainer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    padding: 10%;
+}
+p{
+    margin: 3%;
+
+}
+
+#ShowContainer{
+    display: flex;
+    text-align: center;
+    
+}
+
+#indexContainer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    padding: 10%;
+}
+
+.acctBtns {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+
+#corkBoard {
+    background-image: url('https://peppershomeandgarden.com/wp-content/uploads/2021/08/how-to-hang-a-cork-board-on-a-cement-wall.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    border: 10px solid rgb(165, 126, 74);
+    height: 800px;
+}

@@ -1,14 +1,15 @@
 {% layout "layout.liquid" %} {% block content %}
 
-<div>
+<div class="container-fluid" id="corkBoard">
   
   
  
   <div class="container flex-container">
-    <div class="row justify-content-center">
+    <div class="row">
       {% for vision in visions %}
-        <div class="column">
-     <a href="/visions/{{vision._id}}"> <img src="{{ vision.image }}" class="img-thumbnail" /></a>
+        <div class="col-sm col-md col-lg col-xl">
+     <a href="/visions/{{vision._id}}"> <img src="{{ vision.image }}" class="img-thumbnail img-fluid" /></a>
+     <br/>
       {% if vision.complete == true %} - Complete  {% else %} - Not Complete {% endif %}
     </div>
     {% endfor %}

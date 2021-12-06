@@ -2,10 +2,10 @@
 {% block content %}
 <div class="container-fluid">
 <article>
-
+    <div class="visionshow">
     <h2> {{visions.title}} 
     </h2>
-    <div class="mx-auto d-block image img"><img src="{{ visions.image }}"  /></div>
+    <div class="mx-auto d-block image img"><img src="{{ visions.image }}" /></div>
     <br/>
     <h2 for="description" id="descriptionh2">{{visions.description}}</h2>
     <h3>{% if visions.complete == true %}
@@ -14,6 +14,7 @@
             - Not Complete
         {% endif %}
     </h3>
+    </div>
     <div class="edit-delete-nav">
 
     <a href="/visions/{{ visions._id }}/edit"><button class="btn btn-outline-secondary">EDIT</button></a>

@@ -7,11 +7,16 @@
   <div class="container flex-container">
     <div class="row">
       {% for vision in visions %}
-        <div class="col-sm col-md col-lg col-xl">
-     <a href="/visions/{{vision._id}}"> <img src="{{ vision.image }}" class="img-thumbnail img-fluid" /></a>
+  <div class="card" style="width: 14rem">
+     <a href="/visions/{{vision._id}}"> 
+      <img src="{{ vision.image }}" class="card-img-top" /></a>
      <br/>
+     <div class="card-body">
+       <h4 class="card-title">{{vision.title}}</h4>
+       <p class="card-text">{{vision.description}}</p>
       {% if vision.complete == true %} - Complete  {% else %} - Not Complete {% endif %}
     </div>
+  </div>
     {% endfor %}
     </div>
   </div>

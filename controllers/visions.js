@@ -36,7 +36,7 @@ router.use((req, res, next)=> {
 
 router.get("/", (req, res) => {
     // find all the visions
-    Visions.find({})
+    Visions.find({username: req.session.username})
     .then((visions) => {
         // render the index template with the visions
         res.render("visions/index.liquid", {visions})

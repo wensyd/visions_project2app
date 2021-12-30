@@ -18,7 +18,7 @@ const visionsSchema = new Schema (
         title: String,
         image: String,
         description: String,
-        complete: {type: Boolean, required: false, default:false},
+        complete: Boolean,
         username: String
     }, {timestamps: true})
 
